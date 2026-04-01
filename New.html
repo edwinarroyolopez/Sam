@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Project</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            padding: 20px;
+            background-color: color-mix(in srgb-linear, rgb(174, 134, 174), rgb(255, 0, 0) 50%);
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .chuuya {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(215, 171, 169);
+            border-radius: 50%;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url("https://i.pinimg.com/736x/c4/2e/16/c42e162af4c9c891e2687b4646e4beac.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border: 2px solid rgba(182, 55, 55, 0.671);
+        }
+
+        .chuuya:hover {
+            transform: scale(1.1);
+            transition: all 0.5s ease-in-out;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(131, 52, 52, 0.611);
+            border-radius: 50%;
+        }
+
+        .chuuya:active {
+            transform: scale(0.9);
+            transition: all 0.5s ease-in-out;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(131, 52, 52, 0.611);
+            border-radius: 50%;
+        }
+
+
+        h1 {
+            color: rgb(255, 255, 255);
+            top: 40px;
+            right: 40px;
+            font-size: 40px;
+            font-weight: bold;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-shadow: 0 0 10px rgba(131, 52, 52, 0.611);
+        }
+
+        h1:hover {
+            transform: scale(1.1);
+            transition: all 0.5s ease-in-out;
+            cursor: pointer;
+        }
+
+        h1:active {
+            transform: scale(0.9);
+            transition: all 0.5s ease-in-out;
+            cursor: pointer;
+        }
+
+        h3 {
+            color: rgb(255, 255, 255);
+            top: 40px;
+            right: 40px;
+            font-size: 40px;
+            font-weight: bold;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-shadow: 0 0 10px rgba(131, 52, 52, 0.611);
+        }
+
+        h3:hover {
+            transform: scale(1.1);
+            transition: all 0.5s ease-in-out;
+            cursor: pointer;
+        }
+
+        h3:active {
+            transform: scale(0.9);
+            transition: all 0.5s ease-in-out;
+            cursor: pointer;
+        }
+
+        .imagenes {
+            display: none;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .imagenes img {
+            width: 220px;
+            height: 320px;
+            border-radius: 12px;
+            display: block;
+            flex-wrap: nowrap;
+            gap: 15px;
+            margin-top: 0;
+        }
+
+        .imagenes img:hover {
+            transform: scale(1.1);
+            transition: all 0.5s ease-in-out;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(131, 52, 52, 0.611);
+            border-radius: 10%;
+            border: 2px solid rgba(182, 55, 55, 0.573);
+        }
+
+        .imagenes img:active {
+            transform: scale(0.9);
+            transition: all 0.5s ease-in-out;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(131, 52, 52, 0.611);
+            border-radius: 10%;
+            border: 2px solid rgba(182, 55, 55, 0.573);
+        }
+
+        .contenido {
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .fotos {
+            display: flex;
+            gap: 20px;
+        }
+
+        .spotify {
+            margin-left: 20px;
+            cursor: pointer;
+            transition: all 0.5s ease-in-out;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+
+        .spotify:hover {
+            transform: scale(1.1);
+            transition: all 0.5s ease-in-out;
+            cursor: pointer;
+        }
+
+        .spotify:active {
+            transform: scale(0.9);
+            transition: all 0.5s ease-in-out;
+            cursor: pointer;
+        }
+
+        h2 {
+            color: rgb(255, 255, 255);
+            top: 40px;
+            right: 40px;
+            font-size: 40px;
+            font-weight: bold;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-shadow: 0 0 10px rgba(131, 52, 52, 0.611);
+            cursor: pointer;
+        }
+
+        h2:hover {
+            transform: scale(1.1);
+            transition: all 0.5s ease-in-out;
+            cursor: pointer;
+        }
+
+        h2:active {
+            transform: scale(0.9);
+            transition: all 0.5s ease-in-out;
+            cursor: pointer;
+        }
+
+        .nombre-bloque {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        #videoYT {
+            display: none;
+            width: 700px;
+            height: 394px;
+            margin-top: 20px;
+            border-radius: 12px;
+        }
+
+        .contenido {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a id="fotoLink" href="#" class="chuuya" target="_blank" onclick="rotarLink(event)"></a>
+        <div class="nombre-bloque">
+            <h1 class="titulo" onclick="mostrarImagenes()">Chuuya</h1>
+            <h3 class="titulo" onclick="mostrarVideo()">:3</h3>
+            <h2 class="titulo" onclick="mostrarMusica()">Música^^</h2>
+        </div>
+    </div>
+    <div class="contenido">
+        <div class="imagenes" id="imagenes">
+            <a href="https://bungostraydogs.fandom.com/wiki/Ch%C5%ABya_Nakahara" target="_blank">
+                <img src="https://i.pinimg.com/736x/13/70/76/1370763a252e562c1da2c8625cfb89c7.jpg" alt="Chuuya1"></a>
+            <a href="https://www.youtube.com/watch?v=hB7CDrVnNCs" target="_blank">
+                <img src="https://i.pinimg.com/736x/19/22/5d/19225d2457dfe8fa13303d995b1ac921.jpg" alt="Chuuya2"></a>
+        </div>
+        <iframe id="videoYT" width="500" height="280" style="display: none; border-radius: 12px; margin-top: 20px;"
+            src="https://www.youtube.com/embed/B5d9sLTgWPw" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+    </div>
+    <iframe id="spotify" class="spotify" style="display:none; border-radius:10px"
+        src="https://open.spotify.com/embed/playlist/3ih6vmjsjWaIRa2OoznviV" width="300" height="200" frameborder="0"
+        allowfullscreen="" loading="lazy"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+    </iframe>
+    </div>
+    <script>
+        const chuuya = document.querySelector(".chuuya");
+        chuuya.addEventListener("click", () => {
+            chuuya.style.transform = "scale(1.1)";
+            chuuya.style.transition = "all 0.5s ease-in-out";
+            chuuya.style.cursor = "pointer";
+            chuuya.style.boxShadow = "0 0 10px rgba(131, 52, 52, 0.611)";
+            chuuya.style.borderRadius = "50%";
+            chuuya.style.backgroundImage = "url('https://i.pinimg.com/736x/c4/2e/16/c42e162af4c9c891e2687b4646e4beac.jpg')";
+        });
+        function mostrarVideo() {
+            const video = document.getElementById("videoYT");
+
+            if (video.style.display === "none" || video.style.display === "") {
+                video.style.display = "block";
+            } else {
+                video.style.display = "none";
+            }
+        }
+        function mostrarImagenes() {
+            const imagenes = document.getElementById("imagenes");
+            if (imagenes.style.display === "flex") {
+                imagenes.style.display = "none";
+            } else {
+                imagenes.style.display = "flex";
+            }
+        }
+        const links = [
+            "https://www.youtube.com/watch?v=dofR2RTcsvE",
+            "https://www.youtube.com/watch?v=JA8NzQo1qH0",
+            "https://www.youtube.com/watch?v=2Eu97F-eVsc"
+        ];
+
+        let indice = 0;
+
+        function rotarLink(event) {
+            event.preventDefault();
+            window.open(links[indice], "_blank");
+
+            indice++;
+
+            if (indice >= links.length) {
+                indice = 0;
+            }
+        }
+        function mostrarMusica() {
+            const spotify = document.getElementById("spotify");
+
+            if (spotify.style.display === "none" || spotify.style.display === "") {
+                spotify.style.display = "block";
+            } else {
+                spotify.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
