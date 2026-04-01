@@ -2,43 +2,82 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UX Music</title>
-    <link rel="stylesheet" href="s3-ux-music.css">
-    <script src="s3-ux-music.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UX Music</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="s3-ux-music.css">
 </head>
 
 <body>
-    <div class="container">
-        <a id="fotoLink" href="#" class="chuuya" target="_blank" onclick="rotarLink(event)"></a>
-        <div class="nombre-bloque">
-            <h1 class="titulo" onclick="mostrarImagenes()">Chuuya</h1>
-            <h3 class="titulo" onclick="mostrarVideo()">:3</h3>
-            <h2 class="titulo" onclick="mostrarMusica()">Música^^</h2>
-        </div>
-    </div>
-    <div class="contenido">
-        <div class="imagenes" id="imagenes">
-            <a href="https://bungostraydogs.fandom.com/wiki/Ch%C5%ABya_Nakahara" target="_blank">
-                <img src="https://i.pinimg.com/736x/13/70/76/1370763a252e562c1da2c8625cfb89c7.jpg" alt="Chuuya1"></a>
-            <a href="https://www.youtube.com/watch?v=hB7CDrVnNCs" target="_blank">
-                <img src="https://i.pinimg.com/736x/19/22/5d/19225d2457dfe8fa13303d995b1ac921.jpg" alt="Chuuya2"></a>
-        </div>
-        <iframe id="videoYT" width="500" height="280" style="display: none; border-radius: 12px; margin-top: 20px;"
-            src="https://www.youtube.com/embed/B5d9sLTgWPw" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-        </iframe>
-    </div>
-    <iframe id="spotify" class="spotify" style="display:none; border-radius:10px"
-        src="https://open.spotify.com/embed/playlist/3ih6vmjsjWaIRa2OoznviV" width="300" height="200" frameborder="0"
-        allowfullscreen="" loading="lazy"
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
-    </iframe>
-    </div>
 
+  <header class="app-header">
+    <div class="logo">
+      <svg class="logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="16" cy="16" r="15" stroke="url(#g)" stroke-width="2"/>
+        <path d="M12 10.5v11l9-5.5-9-5.5z" fill="url(#g)"/>
+        <defs>
+          <linearGradient id="g" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#a78bfa"/>
+            <stop offset="1" stop-color="#ec4899"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <span class="logo-text">UX Music</span>
+    </div>
+  </header>
 
+  <main class="app-main">
+
+    <section class="hero" id="hero">
+      <h1 class="hero-title">Tu música.<br><span class="hero-accent">Tu lista.</span></h1>
+      <p class="hero-sub">Pega cualquier enlace de YouTube y aparece al instante.</p>
+
+      <form class="input-bar" id="inputForm" autocomplete="off">
+        <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/>
+          <path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/>
+        </svg>
+        <input
+          type="url"
+          id="videoUrl"
+          class="input-field"
+          placeholder="https://www.youtube.com/watch?v=..."
+          spellcheck="false"
+          autocomplete="off"
+        >
+        <button type="submit" id="addVideo" class="input-btn" aria-label="Agregar video">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="12" y1="5" x2="12" y2="19"/>
+            <line x1="5" y1="12" x2="19" y2="12"/>
+          </svg>
+        </button>
+      </form>
+
+      <p class="input-hint" id="inputHint"></p>
+    </section>
+
+    <section class="empty-state" id="emptyState">
+      <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="40" cy="40" r="39" stroke="url(#eg)" stroke-width="1.5" stroke-dasharray="6 4"/>
+        <path d="M32 27v26l22-13L32 27z" fill="url(#eg)" opacity="0.6"/>
+        <defs>
+          <linearGradient id="eg" x1="0" y1="0" x2="80" y2="80" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#a78bfa"/>
+            <stop offset="1" stop-color="#ec4899"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <p>Agrega tu primer video<br>y empieza a escuchar.</p>
+    </section>
+
+    <section class="grid" id="contenido" aria-label="Lista de videos"></section>
+
+  </main>
+
+  <script src="s3-ux-music.js" defer></script>
 </body>
 
 </html>
