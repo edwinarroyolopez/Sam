@@ -4,177 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS - S2</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        .primary-color {
-            color: #00F;
-        }
-
-        .secondary-color {
-            color: #0F0;
-        }
-
-
-
-
-        /* h1 {
-            color: red;
-        }
-
-        h2 {
-            color: blue;
-        } */
-
-        .cuadro {
-            width: 100px;
-            height: 100px;
-            background-color: green;
-
-        }
-
-        #content {
-            background-color: yellow;
-        }
-
-        header {
-            background: #888;
-            /* 0 - F 
-            RBG -> Red, Green, Blue
-            #000000
-            */
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .search-content {
-            display: flex;
-            gap: 10px;
-        }
-
-        .icon {
-            width: 45px;
-            height: 45px;
-            border: 1px solid red;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            border-radius: 20%;
-        }
-
-        .pinterest {
-            background-image: url("https://play-lh.googleusercontent.com/6CFQQ0b9r5fzF1v6f0gIirWsOGL7sGWkJifuUQxxhbCMcBx5aSG_cNXpjDKDn5c1jwjq");
-        }
-
-        .facebook {
-            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiXN9xSEe8unzPBEQOeAKXd9Q55efGHGB9BA&s");
-        }
-
-        .videos {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            padding-top: 10px;
-            justify-content: center;
-        }
-
-        .video-content {
-            width: 100px;
-            height: 100px;
-            border: 1px solid green;
-            border-radius: 10%;
-            text-align: center;
-        }
-
-        .video-content .title {
-            font-size: 12px;
-            font-weight: bold;
-        }
-
-        .video-content .description {
-            font-size: 12px;
-            color: #666;
-        }
-    </style>
-
-    <script type="text/javascript">
-        function buscar() {
-            const txtSearch = document.getElementById("txt-search");
-            console.log(txtSearch.value);
-            const videos = document.getElementById("videos");
-            const childs = videos.children;
-            for (let i = 0; i < childs.length; i++) {
-                const child = childs[i].innerText.toLowerCase();
-                console.log("i: ", i);
-                if (child.includes(txtSearch.value.toLowerCase())) {
-                    childs[i].style.display = "block";
-                } else {
-                    childs[i].style.display = "none";
-                }
-            }
-            // videos.innerHTML = "<div>No hay videos!</div>";
-        }
-    </script>
-
+    <title>UX Music</title>
+    <link rel="stylesheet" href="s3-ux-music.css">
+    <script src="s3-ux-music.js"></script>
 </head>
 
 <body>
-    <section id="content">
-        <header>
-            <div class="icon pinterest"></div>
-            <div class="icon facebook"></div>
-            <div class="icon"></div>
-            <div class="search-content">
-                <input id="txt-search" type="text" placeholder="Buscar">
-                <button id="btn-search" onclick="buscar()">Buscar</button>
-            </div>
-        </header>
-
-        <main class="videos" id="videos">
-            <div class="video-content">
-                <p class="title">Geopolitica</p>
-                <p class="description">Un analisis de la situacion actual</p>
-            </div>
-            <div class="video-content">
-                <p class="title">Espacio</p>
-                <p class="description">Planetas y galaxias</p>
-            </div>
-            <div class="video-content">
-                <p class="title">Programacion</p>
-                <p class="description">Lenguajes y frameworks</p>
-            </div>
-            <div class="video-content">
-                <p class="title">Historia</p>
-                <p class="description">Antiguedad y edad media</p>
-            </div>
-        </main>
-        <footer>
-            Aqui va el pie de página
-        </footer>
-    </section>
+    <div class="container">
+        <a id="fotoLink" href="#" class="chuuya" target="_blank" onclick="rotarLink(event)"></a>
+        <div class="nombre-bloque">
+            <h1 class="titulo" onclick="mostrarImagenes()">Chuuya</h1>
+            <h3 class="titulo" onclick="mostrarVideo()">:3</h3>
+            <h2 class="titulo" onclick="mostrarMusica()">Música^^</h2>
+        </div>
+    </div>
+    <div class="contenido">
+        <div class="imagenes" id="imagenes">
+            <a href="https://bungostraydogs.fandom.com/wiki/Ch%C5%ABya_Nakahara" target="_blank">
+                <img src="https://i.pinimg.com/736x/13/70/76/1370763a252e562c1da2c8625cfb89c7.jpg" alt="Chuuya1"></a>
+            <a href="https://www.youtube.com/watch?v=hB7CDrVnNCs" target="_blank">
+                <img src="https://i.pinimg.com/736x/19/22/5d/19225d2457dfe8fa13303d995b1ac921.jpg" alt="Chuuya2"></a>
+        </div>
+        <iframe id="videoYT" width="500" height="280" style="display: none; border-radius: 12px; margin-top: 20px;"
+            src="https://www.youtube.com/embed/B5d9sLTgWPw" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+    </div>
+    <iframe id="spotify" class="spotify" style="display:none; border-radius:10px"
+        src="https://open.spotify.com/embed/playlist/3ih6vmjsjWaIRa2OoznviV" width="300" height="200" frameborder="0"
+        allowfullscreen="" loading="lazy"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+    </iframe>
+    </div>
 
 
-
-    <h1>Hola Sam!</h1>
-    <h2>Tema 1</h2>
-    <h3>Sub tema</h3>
-
-    <p>Está es una prueba!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
-    <section class="cuadro"></section>
-    <br />
-    <hr>
-    <a href="https://www.youtube.com" target="_blank">YouTube</a>
-    <div class="cuadro"></div>
 </body>
 
 </html>
